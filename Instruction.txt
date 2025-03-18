@@ -1,0 +1,26 @@
+1. Create Virt
+2. Install Flask
+    pip install Flask
+3. Create the basic controller setup and the template folder structure
+4. Add cdn version of bootstrap
+5. Template Inheritance,
+    -> create this base template
+    -> create in inner template
+
+    {% extends "index.html" %}
+
+    and
+
+    {% block mainContent %}
+    {% endblock %}
+
+
+    and
+
+    {% block mainContent %}
+<h1 class="">This is an extended block</h1>
+{% endblock %}
+
+
+
+6. Last Number .....................13/31

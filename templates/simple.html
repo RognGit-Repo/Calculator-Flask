@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block mainContent %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-8">Flask Calculator</h1>
+        <p class="lead">You can try out our awesome calculator</p>
+    </div>
+</div>
+
+<form action="" class="container">
+    <div class="row">
+        <div class="col-lg-2 col-md-3">
+            <input type="number" name="firstNumber" class="form-control" placeholder="Insert First Number">
+        </div>
+        <div class="col-lg-2 col-md-3">
+            <input type="number" name="secondNumber" class="form-control" placeholder="Insert Second Number">
+        </div>
+    </div>
+</form>
+{% endblock %}
