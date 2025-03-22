@@ -8,14 +8,38 @@
     </div>
 </div>
 
-<form action="" class="container">
+<form action="" class="container" action="{{url_for('calculate')}}" method="post">
     <div class="row">
         <div class="col-lg-2 col-md-3">
             <input type="number" name="firstNumber" class="form-control" placeholder="Insert First Number">
         </div>
+
+        <div class="col-lg-2">
+            <select class="form-control" name="operation">
+                <option selected>Select...</option>
+                <option>+</option>
+                <option>-</option>
+                <option>x</option>
+                <option>/</option>
+            </select>
+        </div>
         <div class="col-lg-2 col-md-3">
             <input type="number" name="secondNumber" class="form-control" placeholder="Insert Second Number">
         </div>
+        <div class="col-lg-3">
+            <input type="submit" value="calculate" class="btn btn-primary">
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-lg-1">
+            <div class="text-center">=</div>
+        </div>
+        <div class="col-lg-3">
+            <input type="text" class="form-control" placeholder="Result"/>
+
+        </div>
+        
     </div>
 </form>
 {% endblock %}
