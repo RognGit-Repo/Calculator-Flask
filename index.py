@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 
 app=Flask(__name__)
 
@@ -15,7 +15,25 @@ def simple():
 
 @app.route("/calculate", methods=["post"])
 def calculate():
-    return "calculated"
+    first_number=int(request.form["firstNumber"])
+    operation=request.form["operation"]
+    second_number=int(request.form["secondNumber"])
+    if operation=="+":
+        result= first_number+second_number
+    elif operation=="-":
+        result= first_number-second_number
+    elif operation=="x":
+        result= first_number*second_number
+        
+    elif operation=="/":
+        result= first_number/second_number
+
+
+    else:
+        result= "There's an error"
+        
+    return str(result)
+    
 
 if __name__=="__main__":
     app.run(debug=True)
