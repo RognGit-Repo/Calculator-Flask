@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request,redirect
 
 app=Flask(__name__)
 
@@ -11,7 +11,9 @@ def main():
 
 @app.route("/simple")
 def simple():
+
     return render_template("simple.html")
+
 
 @app.route("/calculate", methods=["post"])
 def calculate():
@@ -30,9 +32,9 @@ def calculate():
 
 
     else:
-        result= "There's an error"
+        result= -1
         
-    return str(result)
+    return render_template("/simple.html",result=result)
     
 
 if __name__=="__main__":
